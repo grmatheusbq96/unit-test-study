@@ -1,7 +1,7 @@
 Funcionalidade: Cadastrar um produto
 	Eu como usuario do sistema
-	Preciso que seja possivel o cadastro de produtos
-	Para que eu possa melhorar o gerenciamento do meu estoque de produtos
+	Preciso que seja possivel o cadastro de produtos onde não devem haver produtos de mesmo nome e modelo cadastrados
+	Para que eu possa melhorar o gerenciamento do meu estoque de cada produto especifico
 
 Cenario: Cadastrar um produto inexistente na base
 	Dado que ao receber um objeto de produto com os seus campos corretamente preenchidos
