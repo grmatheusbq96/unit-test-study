@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\TestesUnitarios.Application\TestesUnitarios.Application.csproj" />
     <ProjectReference Include="..\TestesUnitarios.CQS\TestesUnitarios.CQS.csproj" />
+    <ProjectReference Include="..\TestesUnitarios.Infra\TestesUnitarios.Infra.csproj" />
   </ItemGroup>
 
 </Project>
