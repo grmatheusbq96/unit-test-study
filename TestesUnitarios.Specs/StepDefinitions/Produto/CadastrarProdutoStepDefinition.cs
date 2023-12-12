@@ -48,20 +48,6 @@ namespace TestesUnitarios.Specs.StepDefinitions.Produto
             _scenarioContext["Produto"] = produtoComDadosCorretos;
         }
 
-        [When("a aplicacao invocar o metodo para cadastro de um produto")]
-        public void InvocarMetodoParaCadastroDeUmProduto()
-        {
-            _scenarioContext["ResultadoCadastroDeProduto"] =
-            _handler.Handle((CadastrarProdutoCommand)_scenarioContext["Produto"], new CancellationTokenSource(1000).Token);
-        }
-
-        [Then("a aplicacao deve retornar sucesso true com um objeto de retorno preenchido")]
-        public void RetornarSucesso()
-        {
-            var retornoOperacao = (Task<ResultViewModel<ProdutoViewModel>>)_scenarioContext["ResultadoCadastroDeProduto"];
-            retornoOperacao.Result.Result.Should().NotBeNull();
-        }
-
         [Scope(Feature = "Cadastrar um produto", Scenario = "Cadastrar um produto ja existente na base"),
             Given("que ao receber um objeto de produto que ja foi cadastrado na base")]
         public void ReceberObjetoJaCadastradoNaBase()
@@ -77,11 +63,25 @@ namespace TestesUnitarios.Specs.StepDefinitions.Produto
             _scenarioContext["ProdutoJaCadastradoNaBase"] = produtoComDadosCorretos;
         }
 
+        [When("a aplicacao invocar o metodo para cadastro de um produto")]
+        public void InvocarMetodoParaCadastroDeUmProduto()
+        {
+            _scenarioContext["ResultadoCadastroDeProduto"] =
+            _handler.Handle((CadastrarProdutoCommand)_scenarioContext["Produto"], new CancellationTokenSource(1000).Token);
+        }
+
         [When("a aplicacao invocar o metodo para cadastro")]
         public void InvocarMetodoParaCadastroJaExistente()
         {
             _scenarioContext["ResultadoCadastroDeProdutoJaExistente"] =
             _handler.Handle((CadastrarProdutoCommand)_scenarioContext["ProdutoJaCadastradoNaBase"], new CancellationTokenSource(1000).Token);
+        }
+
+        [Then("a aplicacao deve retornar sucesso true com um objeto de retorno preenchido")]
+        public void RetornarSucesso()
+        {
+            var retornoOperacao = (Task<ResultViewModel<ProdutoViewModel>>)_scenarioContext["ResultadoCadastroDeProduto"];
+            retornoOperacao.Result.Result.Should().NotBeNull();
         }
 
         [Then("a aplicacao deve retornar sucesso false com um objeto nulo")]
