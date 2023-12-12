@@ -2,16 +2,19 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\TestesUnitarios.Application\TestesUnitarios.Application.csproj" />
+    <ProjectReference Include="..\TestesUnitarios.CQS\TestesUnitarios.CQS.csproj" />
+    <ProjectReference Include="..\TestesUnitarios.Infra\TestesUnitarios.Infra.csproj" />
   </ItemGroup>
 
 </Project>
