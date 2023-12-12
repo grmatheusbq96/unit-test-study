@@ -9,6 +9,10 @@ namespace TestesUnitarios.CQS.ViewModels
         public string Categoria { get; set; }
         public string Modelo { get; set; }
 
+        public ProdutoViewModel()
+        {
+        }
+
         public ProdutoViewModel(ProdutoModel model)
         {
             Id = model.Id;

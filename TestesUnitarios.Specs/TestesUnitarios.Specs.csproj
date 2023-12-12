@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+    <PackageReference Include="Moq" Version="4.20.70" />
     <PackageReference Include="SpecFlow.Plus.LivingDocPlugin" Version="3.9.57" />
     <PackageReference Include="SpecFlow.NUnit" Version="3.9.40" />
     <PackageReference Include="nunit" Version="3.13.2" />
@@ -16,8 +17,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
-    <Folder Include="StepDefinitions\" />
+    <Folder Include="Features\Produto\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestesUnitarios.Application\TestesUnitarios.Application.csproj" />
   </ItemGroup>
 
 </Project>
