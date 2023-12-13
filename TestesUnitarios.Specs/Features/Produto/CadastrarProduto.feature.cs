@@ -35,8 +35,9 @@ namespace TestesUnitarios.Specs.Features.Produto
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "Features/Produto", "Cadastrar um produto", "\tEu como usuario do sistema\r\n\tPreciso que seja possivel o cadastro de produtos\r\n\t" +
-                    "Para que eu possa melhorar o gerenciamento do meu estoque de produtos", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("pt-BR"), "Features/Produto", "Cadastrar um produto", "\tEu como usuario do sistema\r\n\tPreciso que seja possivel o cadastro de produtos on" +
+                    "de n�o devem haver produtos de mesmo nome e modelo cadastrados\r\n\tPara que eu pos" +
+                    "sa melhorar o gerenciamento do meu estoque de cada produto especifico", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
